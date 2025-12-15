@@ -17,8 +17,11 @@ DEFAULT = "replace"
 
 logger = logging.getLogger("presidio-anonymizer")
 
-
+from presidio_anonymizer.operators import Initial
 class AnonymizerEngine(EngineBase):
+    def __init__(self):
+        super().__init__()
+        self.add_anonymizer(Initial)
     """
     AnonymizerEngine class.
 
